@@ -1,4 +1,4 @@
-﻿<?php
+<?php
 /** 
  * Classe d'accès aux données. 
  
@@ -53,8 +53,18 @@ class PdoGsb{
  * @return l'id, le nom et le prénom sous la forme d'un tableau associatif 
 */
 	public function getInfosVisiteur($login, $mdp){
-		$req = "select visiteur.id as id, visiteur.nom as nom, visiteur.prenom as prenom from visiteur 
-		where visiteur.login='$login' and visiteur.mdp='$mdp'";
+		$mdp = md5($mdp);
+		$req = "select visiteur.id as id, visiteur.nom as nom, visiteur.prenom as prenom from visiteur inner join utilisateur on visiteur.login = utilisateur.login
+		where utilisateur.login='$login' and utilisateur.mdp='$mdp'";
+		$rs = $this->monPdo->query($req);
+		$ligne = $rs->fetch();
+		return $ligne;
+	}
+	
+	public function getInfosComptable($login, $mdp){
+	    $mdp = md5($mdp);
+		$req = "select comptable.id as id, comptable.nom as nom, comptable.prenom as prenom from comptable inner join utilisateur on comptable.login = utilisateur.login
+		where utilisateur.login='$login' and utilisateur.mdp='$mdp'";
 		$rs = $this->monPdo->query($req);
 		$ligne = $rs->fetch();
 		return $ligne;

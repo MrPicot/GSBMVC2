@@ -1,5 +1,4 @@
-<h2>Fiche de frais du mois <?php echo $numMois."-".$numAnnee?> : 
-    </h2>
+<h2>Fiche de frais du mois <?php echo $numMois."-".$numAnnee?> : </h2>
     <p>
         <strong>Etat : </strong>   
             <?php echo $libEtat?> depuis le <?php echo $dateModif?> <br> 
