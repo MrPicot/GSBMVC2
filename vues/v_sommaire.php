@@ -5,8 +5,10 @@
         
         <h4>
             <?php echo $_SESSION['prenom']."  ".$_SESSION['nom']  ?>
-        </h4>
-           
+        </h4>  
+        <h6>Bienvenue sur votre espace personnel,</h6>
+        <h6>Vous êtes connectez en tant que visiteur</h6>
+        <br/>
         <ul class="list-unstyled">
 			
            <li>
@@ -22,7 +24,3 @@
         
     </nav>
     <div id="contenu" class="col-md-10">
-   
-        
-    
-    
