@@ -14,7 +14,7 @@ if (isset($_REQUEST['erreurs']))
          <fieldset>
              <legend>Veuillez vous identifier:</legend>
    	 <div class="form-group"> 	
-         <label for="nom">Login*</label>
+         <label for="nom">Login</label>
          <div class="row">
              <div class="col-xs-12 col-sm-6 col-md-4">
              <input class="form-control"  id="login" type="text" name="login"  size="30" maxlength="45" placeholder="login">
@@ -22,7 +22,7 @@ if (isset($_REQUEST['erreurs']))
          </div>
          </div>
          <div class="form-group"> 
-	 <label for="mdp">Mot de passe*</label>
+	 <label for="mdp">Mot de passe</label>
          <div class="row">
              <div class="col-xs-12 col-sm-6 col-md-4">
              <input class="form-control" id="mdp"  type="password"  name="mdp" size="30" maxlength="45" placeholder="mot de passe">
