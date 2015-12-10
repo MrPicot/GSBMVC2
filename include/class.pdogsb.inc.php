@@ -317,8 +317,12 @@ class PdoGsb{
 		$this->monPdo->exec($req);
 	}
         
-        public function creeVisituer(){
-            
+        public function getLesVisiteursAValider() {
+                $req ="SELECT v.nom, v.prenom, f.idEtat FROM visiteur v INNER JOIN fichefrais f ON v.id=f.idVisiteur
+                WHERE f.idEtat = 'CL'";
+                $res = $this->monPdo->query($req);
+		$laLigne = $res->fetchAll();
+		return $laLigne;
         }
-}
+}      
 ?>
