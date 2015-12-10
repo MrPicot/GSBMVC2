@@ -74,7 +74,7 @@ class PdoGsb{
  */ 
         public function updateDateco($login){
             
-            $req=" UPDATE utilisateur SET DerniereCo = NOW() WHERE utilisateur.login='$login'";
+            $req="UPDATE utilisateur SET DerniereCo = NOW() WHERE utilisateur.login='$login'";
             $rs = $this->monPdo->exec($req);
       }
         
