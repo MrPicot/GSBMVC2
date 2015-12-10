@@ -2,18 +2,22 @@
       <div class="corpsForm">
           
           <fieldset>
-            </legend>
+            
             <table>
+                <td>Choisi</td>
                 <td>Nom</td>
                 <td>Prénom</td>
                 <td>État</td>
+                <td>Date</td>
 			<?php
                         echo '<tr>';
 				foreach ($lesVisiteurs as $unVisiteur)
 				{
+                                        echo '<td><input type="checkbox" name="Validation" value=""></td>';
                                         echo '<td>'.$nomPersonne = $unVisiteur['nom'].'</td>';
 					echo '<td>'.$prenomPersonne = $unVisiteur['prenom'].'</td>';
-                                        echo '<td>'.$idEtat = $unVisiteur['idEtat'].'</td></tr>';			
+                                        echo '<td>'.$idEtat = $unVisiteur['idEtat'].'</td>';
+                                        echo '<td>'.$dateModif = $unVisiteur['dateModif'].'</td></tr>';			
 				}
 			?>	
             </table>
