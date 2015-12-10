@@ -14,6 +14,7 @@ if (!empty($lesFraisHorsForfait)) {
        </thead>  
        <tbody>
     <?php    
+    
 	    foreach( $lesFraisHorsForfait as $unFraisHorsForfait) 
 		{
 			$libelle = $unFraisHorsForfait['libelle'];

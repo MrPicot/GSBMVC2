@@ -21,8 +21,9 @@
 			<?php
 				}
 			?>	
-           
+    
           </fieldset>
+   
 <?php 
     if (isset($_REQUEST['erreurs'])&& $_REQUEST['erreurForm']=="FraisForfait") 
     {    
