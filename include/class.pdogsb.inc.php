@@ -54,7 +54,7 @@ class PdoGsb{
 */
 	public function getInfosVisiteur($login, $mdp){
 		$mdp = md5($mdp);
-		$req = "select visiteur.id as id, visiteur.nom as nom, visiteur.prenom as prenom from visiteur inner join utilisateur on visiteur.login = utilisateur.login
+		$req = "select utilisateur.DerniereCo as date, visiteur.id as id, visiteur.nom as nom, visiteur.prenom as prenom from visiteur inner join utilisateur on visiteur.login = utilisateur.login
 		where utilisateur.login='$login' and utilisateur.mdp='$mdp'";
 		$rs = $this->monPdo->query($req);
 		$ligne = $rs->fetch();
@@ -63,12 +63,21 @@ class PdoGsb{
 	
 	public function getInfosComptable($login, $mdp){
 	    $mdp = md5($mdp);
-		$req = "select comptable.id as id, comptable.nom as nom, comptable.prenom as prenom from comptable inner join utilisateur on comptable.login = utilisateur.login
+		$req = "select utilisateur.DerniereCo as date, comptable.id as id, comptable.nom as nom, comptable.prenom as prenom from comptable inner join utilisateur on comptable.login = utilisateur.login
 		where utilisateur.login='$login' and utilisateur.mdp='$mdp'";
 		$rs = $this->monPdo->query($req);
 		$ligne = $rs->fetch();
 		return $ligne;
 	}
+/**   
+ * Mettre à jour la date de dernière connexion
+ */ 
+        public function updateDateco($login){
+            
+            $req=" UPDATE utilisateur SET DerniereCo = NOW() WHERE utilisateur.login='$login'";
+            $rs = $this->monPdo->exec($req);
+      }
+        
 
 /**
  * Retourne sous forme d'un tableau associatif toutes les lignes de frais hors forfait
@@ -307,5 +316,9 @@ class PdoGsb{
 		where fichefrais.idvisiteur ='$idVisiteur' and fichefrais.mois = '$mois'";
 		$this->monPdo->exec($req);
 	}
+        
+        public function creeVisituer(){
+            
+        }
 }
 ?>

@@ -8,6 +8,7 @@
         </h4>  
         <h6>Bienvenue sur votre espace personnel,</h6>
         <h6>Vous êtes connectez en tant que visiteur</h6>
+        <h6>Dernière Connexion: <?php echo "<br/>". $date ?> </h6>
         <br/>
         <ul class="list-unstyled">
 			

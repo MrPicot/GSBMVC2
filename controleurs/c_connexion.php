@@ -13,15 +13,13 @@ switch($action){
 		$mdp = $_REQUEST['mdp'];
 		
 		$visiteur = $pdo->getInfosVisiteur($login,$mdp);
-	
-		
 		
 		if(!is_array( $visiteur)){
 
 		    $comptable = $pdo->getInfosComptable($login,$mdp);
 			
 			 if(!is_array($comptable)) {       
-                          ajouterErreur("Login ou mot de passe incorrect");
+                          ajouterErreur("Login ou mot de passe incorrect","formulaireconnect");
                            
                             include("vues/v_connexion.php");
                         }
@@ -29,6 +27,8 @@ switch($action){
                                 $id = $comptable['id'];
                                 $nom = $comptable['nom'];
                                 $prenom = $comptable['prenom'];
+  
+                                $date=$comptable['date'];
                                 connecter($id,$nom,$prenom);
                                 include("vues/v_sommaire_comp.php");
                         }		
@@ -38,10 +38,14 @@ switch($action){
 			$id = $visiteur['id'];
 			$nom =  $visiteur['nom'];
 			$prenom = $visiteur['prenom'];
+                        
+                        $date=$visiteur['date'];
 			connecter($id,$nom,$prenom);
 			include("vues/v_sommaire.php");
-		}
+		} 
+               $pdo->updateDateco($login);
 		break;
+                
 	}
 	default :{
 		include("vues/v_connexion.php");
