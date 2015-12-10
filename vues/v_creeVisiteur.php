@@ -4,6 +4,8 @@ include("vues/v_sommaire_comp.php");?>
 <div data-role="content" id="divinscription"> 
     <form id='frminscription' method="POST" action="index.php?uc=index.php?uc=creeVisiteur&action=ajoutVisiteur" >
      <div data-role="fieldcontain" id ="champsinscription">
+        <h2>Formulaire pour ajouter un visiteur</h2>
+        <br/>
         <label for="nom">Nom </label>
         <input type="text" name="nom" id="nom" value="" class="required"/>
         <br/>

@@ -318,7 +318,7 @@ class PdoGsb{
 	}
         
         public function getLesVisiteursAValider() {
-                $req ="SELECT v.nom, v.prenom, f.idEtat FROM visiteur v INNER JOIN fichefrais f ON v.id=f.idVisiteur
+                $req ="SELECT v.nom, v.prenom, f.idEtat, DATE_FORMAT(f.dateModif, '%d/%m/%Y') AS dateModif FROM visiteur v INNER JOIN fichefrais f ON v.id=f.idVisiteur
                 WHERE f.idEtat = 'CL'";
                 $res = $this->monPdo->query($req);
 		$laLigne = $res->fetchAll();

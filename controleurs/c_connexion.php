@@ -29,7 +29,7 @@ switch($action){
                                 $prenom = $comptable['prenom'];
   
                                 $date=$comptable['date'];
-                                connecter($id,$nom,$prenom);
+                                connecter($id,$nom,$prenom, $date);
                                 include("vues/v_sommaire_comp.php");
                         }		
 }						
@@ -40,7 +40,7 @@ switch($action){
 			$prenom = $visiteur['prenom'];
                         
                         $date=$visiteur['date'];
-			connecter($id,$nom,$prenom);
+			connecter($id,$nom,$prenom, $date);
 			include("vues/v_sommaire.php");
 		} 
                $pdo->updateDateco($login);
