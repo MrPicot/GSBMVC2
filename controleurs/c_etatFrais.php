@@ -29,7 +29,10 @@ switch($action){
 		$nbJustificatifs = $lesInfosFicheFrais['nbJustificatifs'];
 		$dateModif =  $lesInfosFicheFrais['dateModif'];
 		$dateModif =  dateAnglaisVersFrancais($dateModif);
+		$lesLignesSupprimees = $pdo->getLesLignesSupprimees($idVisiteur,$mois);
 		include("vues/v_etatFrais.php");
 	}
 }
+
+
 ?>

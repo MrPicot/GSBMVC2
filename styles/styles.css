@@ -154,3 +154,26 @@ label
 {
     width: 150px; 
 }
+/*modifié par Ceylan*/
+
+#contenu tr:hover
+{
+   text-decoration:none;
+   background-color : #A9E2F3;
+}
+
+#id_div_1
+{
+	margin-bottom:45px;
+	font-weight : bold;
+	border:1px dotted black;
+	background-color : #A9E2F3;
+}
+
+h3
+{
+	font-weight : bold;
+}
+
+
+/*fin modif Ceylan*/

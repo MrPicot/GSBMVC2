@@ -307,5 +307,17 @@ class PdoGsb{
 		where fichefrais.idvisiteur ='$idVisiteur' and fichefrais.mois = '$mois'";
 		$this->monPdo->exec($req);
 	}
+        
+        /*modifié par Ceylan*/
+        public function getLesLignesSupprimees($idVisiteur,$mois)
+        {
+            $req = "select * from lignefraishorsforfait where idvisiteur ='$idVisiteur' and mois = '$mois'";
+            $res = $this->monPdo->query($req);
+            $laLigne = $res->fetch();
+	        return $laLigne;
+		
+        }
+        /*fin modif Ceylan*/
+        
 }
 ?>
