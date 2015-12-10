@@ -1,0 +1,10 @@
+tree 22eab1e2174e092a712fe5e2f5bf5672c6c8e43c
+parent 04e9c5c24af0ad4b2e5b148f788f9d965cf9f224
+parent aa18126684cdebe2dffe34054b16e79f7f1eae86
+author Slinf <clement.bretin@s305-07.BtsSio-Carriat.com> 1448556614 +0100
+committer Slinf <clement.bretin@s305-07.BtsSio-Carriat.com> 1448556614 +0100
+
+Merge origin/master
+récupération sommaire comptable
+Conflicts:
+	vues/v_sommaire_comp.php
