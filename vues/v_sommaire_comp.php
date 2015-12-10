@@ -12,7 +12,7 @@
         <ul class="list-unstyled">
 			
            <li>
-              <a href="#" title="Valider fiche de frais ">Valider fiche de frais</a>
+              <a href="index.php?uc=validerFrais&action=validerFrais" title="Valider fiche de frais ">Valider fiche de frais</a>
               <br/>
            </li>
            <li>

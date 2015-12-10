@@ -307,5 +307,13 @@ class PdoGsb{
 		where fichefrais.idvisiteur ='$idVisiteur' and fichefrais.mois = '$mois'";
 		$this->monPdo->exec($req);
 	}
-}
+        
+        public function getLesVisiteursAValider() {
+                $req ="SELECT v.nom, v.prenom, f.idEtat FROM visiteur v INNER JOIN fichefrais f ON v.id=f.idVisiteur
+                WHERE f.idEtat = 'CL'";
+                $res = $this->monPdo->query($req);
+		$laLigne = $res->fetchAll();
+		return $laLigne;
+        }
+}      
 ?>

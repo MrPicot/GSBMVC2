@@ -23,6 +23,9 @@ switch($uc){
         case 'creeVisiteur' :{
 		include("controleurs/c_creeVisiteur.php");break; 
 	}
+        case 'validerFrais' :{
+                include ("controleurs/c_validerFrais.php");break;
+        }
 }
 include("vues/v_pied.php");
 ?>
