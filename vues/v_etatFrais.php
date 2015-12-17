@@ -103,7 +103,7 @@ targetElement.style.display = "none" ;
 		<h3>Motif de la suppression par le comptable: </h3>
              <?php
 			 echo $motifSuppr;
-			 ?>
+	     ?>
         </div> 
 			
 			

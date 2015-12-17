@@ -334,6 +334,24 @@ class PdoGsb{
 	        return $laLigne;
 		
         }
+        
+        public function getLesVisiteurs() {
+            
+            $req = "SELECT nom as nomVisiteur, prenom as prenomVisiteur, id from visiteur";
+            $res = $this->monPdo->query($req);
+            $laLigne = $res->fetchAll();
+            return $laLigne;
+        }
+        
+        public function getLesFraisVisiteurs() {
+            
+            $req = "SELECT * from fichefrais WHERE idEtat='VA' OR idEtat='RB' AND idVisiteur='a131' ";
+            $res = $this->monPdo->query($req);
+            $laLigne = $res->fetchAll();
+            return $laLigne;
+        }
+        
+        
         /*fin modif Ceylan*/
         
         /*cree un nouveau visiteur*/

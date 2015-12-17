@@ -17,7 +17,7 @@
               <br/>
            </li>
            <li>
-              <a href="#" title="Suivre paiement des fiches de frais">Suivre paiement des fiches de frais</a>
+              <a href="index.php?uc=suivreFrais&action=selectionner" title="Suivre paiement des fiches de frais">Suivre paiement des fiches de frais</a>
               <br/>
            </li>
            <li>
