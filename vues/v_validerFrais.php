@@ -11,6 +11,7 @@
                 <th>ID</th>
                 <th>Date</th>
                 <?php
+                error_reporting(0);
                 echo '<tr>';
                 foreach ($lesVisiteurs as $unVisiteur) {
                     echo '<td><input type="checkbox" name="id" value="id"></td>';
