@@ -1,5 +1,5 @@
 <?php
-
+error_reporting(0);
 include("vues/v_sommaire_comp.php");
 $action = $_REQUEST['action'];
 $idVisiteur = $_REQUEST['idVisiteur'];

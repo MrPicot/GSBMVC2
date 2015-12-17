@@ -341,7 +341,7 @@ class PdoGsb {
 
     public function validerFicheFrais($idVisiteur) {
         $req = "update fichefrais set idEtat = 'VA' where fichefrais.idVisiteur ='$idVisiteur'";
-        $this->monPdo->exec($req);
+        $this->monPdo->query($req);
     }
 
     /* modifié par Ceylan */
