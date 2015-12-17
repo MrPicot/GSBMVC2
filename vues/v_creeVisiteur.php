@@ -29,7 +29,7 @@ include("vues/v_sommaire_comp.php");?>
         <label id="datembauche">Date Embauche</label>
         <input type="date" name="datembauche" id="datembauche" value="" class="required" />
         <br/><br/>
-          <input type="submit" name="submit" id="btninscription" value="Inscrire"  />
+        <button type="submit" class="btn btn-primary">Inscrire</button>
      </div>
     </form>
 </div><!-- fin content-->

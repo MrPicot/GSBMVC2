@@ -54,8 +54,8 @@ class PdoGsb{
 */
 	public function getInfosVisiteur($login, $mdp){
 		$mdp = md5($mdp);
-		$req = "select utilisateur.DerniereCo as date, visiteur.id as id, visiteur.nom as nom, visiteur.prenom as prenom from visiteur inner join utilisateur on visiteur.login = utilisateur.login
-		where utilisateur.login='$login' and utilisateur.mdp='$mdp'";
+		$req = "select utilisateur.DerniereCo as date, visiteur.id as id, visiteur.nom as nom, visiteur.prenom as prenom from visiteur 
+                inner join utilisateur on visiteur.login = utilisateur.login where utilisateur.login='$login' and utilisateur.mdp='$mdp'";
 		$rs = $this->monPdo->query($req);
 		$ligne = $rs->fetch();
 		return $ligne;
@@ -63,8 +63,8 @@ class PdoGsb{
 	
 	public function getInfosComptable($login, $mdp){
 	    $mdp = md5($mdp);
-		$req = "select utilisateur.DerniereCo as date, comptable.id as id, comptable.nom as nom, comptable.prenom as prenom from comptable inner join utilisateur on comptable.login = utilisateur.login
-		where utilisateur.login='$login' and utilisateur.mdp='$mdp'";
+		$req = "select utilisateur.DerniereCo as date, comptable.id as id, comptable.nom as nom, comptable.prenom as prenom from comptable 
+                inner join utilisateur on comptable.login = utilisateur.login where utilisateur.login='$login' and utilisateur.mdp='$mdp'";
 		$rs = $this->monPdo->query($req);
 		$ligne = $rs->fetch();
 		return $ligne;
@@ -335,6 +335,13 @@ class PdoGsb{
 		
         }
         /*fin modif Ceylan*/
+        
+        /*cree un nouveau visiteur*/
+        public function inscriptVisiteur($id,$nom,$prenom,$adresse,$cp,$ville,$datembauche)
+        {
+             $req = "Insert into visiteur(id,nom,prenom,adresse,cp,ville,dateEmbauche) values('$id','$nom','$prenom','$adresse','$cp','$ville','$datembauche')";
+             $this->monPdo->exec($req);
+        }
         
 }
 ?>
