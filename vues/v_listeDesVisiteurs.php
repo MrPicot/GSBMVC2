@@ -5,15 +5,16 @@
             <p>              
                 <select id="viListe" name="viListe"> 
                 <?php
+                              
                         foreach($listeDesVisiteurs as $data) 
                         {
                                 $prenom = $data['prenomVisiteur'];
                                 $nom = $data['nomVisiteur'];
-								$id = $data['id'];
+			        $idV = $data['id'];
 
                               
                 ?> 
-                <option> <?php echo $prenom . " " . $nom . " " . $id ?> </option>
+                <option> <?php echo $idV ?> </option>
                 <?php
                         }
                 ?>

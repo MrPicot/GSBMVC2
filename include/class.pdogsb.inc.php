@@ -250,8 +250,7 @@ class PdoGsb{
 	public function creeNouveauFraisHorsForfait($idVisiteur,$mois,$libelle,$date,$montant){
 		$dateFr = dateFrancaisVersAnglais($date);
                 $libEchap = $this->monPdo->quote($libelle);
-		$req = "insert into lignefraishorsforfait 
-		values('','$idVisiteur','$mois',$libEchap,'$dateFr','$montant')";
+		$req = "insert into lignefraishorsforfait(id, idVisiteur, mois, libelle, date, montant ) values('','$idVisiteur','$mois',$libEchap,'$dateFr','$montant')";
                 $this->monPdo->exec($req);
 	}
 /**
@@ -343,9 +342,9 @@ class PdoGsb{
             return $laLigne;
         }
         
-        public function getLesFraisVisiteurs() {
+        public function getLesFraisVisiteurs($idV) {
             
-            $req = "SELECT * from fichefrais WHERE idEtat='VA' OR idEtat='RB' AND idVisiteur='a131' ";
+            $req = "SELECT * from fichefrais WHERE idEtat='VA' OR idEtat='RB' AND idVisiteur='$idV' ";
             $res = $this->monPdo->query($req);
             $laLigne = $res->fetchAll();
             return $laLigne;

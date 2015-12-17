@@ -1,8 +1,11 @@
+<center>
 <?php
+ error_reporting(0);
 include("vues/v_sommaire_comp.php");
 $action = $_REQUEST['action'];
+$idV = $_REQUEST['viListe'];
 ?>
-<center>
+
 <?php
 switch($action){
 	case 'selectionner':{
@@ -12,10 +15,11 @@ switch($action){
 	}
 	
 	case 'apresSelect':{
-	  $listeFraisVisiteurs = $pdo->getLesFraisVisiteurs();
+	  $listeFraisVisiteurs = $pdo->getLesFraisVisiteurs($idV);
       include("vues/v_listeFraisVisiteurs.php");      
       break;
 	}
 }
+
 ?>
 </center>

@@ -16,7 +16,7 @@
 		  {
 	
 			$mois = $unFraisVisiteur['mois'];
-	        $date = $unFraisVisiteur['dateModif'];
+	                $date = $unFraisVisiteur['dateModif'];
 			$montantV = $unFraisVisiteur['montantValide'];
 			$etat = $unFraisVisiteur['idEtat'];
 		?>
